@@ -1,0 +1,663 @@
+body {
+    background-color: var(--white);
+    display: flex;
+}
+.main-container {
+    width: 100%;
+    overflow: auto;
+}
+/* ENCABEZADO */
+header {
+    padding: .5em 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+header h1 {
+    font-family: 'Roboto-light';
+    font-weight: 300;
+    font-size: 28px;
+}
+header .usuario {
+    font-family: 'Roboto-light';
+    font-weight: 300;
+    font-size: 18px;
+}
+/* MENU */
+nav {
+    background-color: var(--blue);
+    width: 16em;
+    height: 100vh;
+    overflow: auto;
+    position: sticky;
+    top: 0;
+}
+.menu-icon {
+    width: 18px;
+    margin-right: .25em;
+}
+.nav-element {
+    color: var(--text-white);
+    opacity: .6;
+    white-space: nowrap;
+    padding: 1em 0 1em 1em;
+    display: flex;
+    align-items: center;
+}
+.nav-element:hover {
+    opacity: 1;
+}
+.details-list {
+    background-color: var(--white);
+    border-radius: 5px;
+    margin: 0 .5em;
+    padding: .5em 1em 0 .5em;
+}
+.details-list a {
+    display: block;
+    padding: 0 0 1em 0;
+    font-size: 14px;
+    color: var(--text-black);
+    white-space: nowrap;
+    opacity: .6;
+}
+.details-list a:hover {
+    opacity: 1;
+}
+.nav-details summary {
+    color: var(--text-white);
+    opacity: .6;
+    padding: 1em;
+    outline: none;
+    list-style-type: none;
+    white-space: nowrap;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-details summary div {
+    display: flex;
+    align-items: center;
+}
+.details-chevron-open {
+    display: none;
+    width: 18px;
+}
+.details-chevron-close {
+    width: 18px;
+}
+.nav-details[open] .details-chevron-open {
+    display: inherit;
+}
+.nav-details[open] .details-chevron-close {
+    display: none;
+}
+.nav-details[open] > summary {
+    opacity: 1;
+}
+/* FORMULARIOS ESTANDAR */
+.base-title {
+    font-family: Roboto-Light;
+    font-size: 24px;
+    font-weight: 300;
+}
+/* POSIBLE CLASE SIN USO */
+.base-fieldset-title {
+    font-family: Roboto-Light;
+    font-size: 20px;
+    font-weight: 300;
+}
+.base-label {
+    font-family: Roboto-Light;
+    font-weight: 300;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.base-input {
+    width: 20em;
+    height: 3em;
+    margin-top: .5em;
+    padding: .75em 1em;
+    border: 1px solid var(--grey);
+}
+.base-input-select {
+    width: 15em;
+    height: 3em;
+    margin-top: .5em;
+    padding: .75em 1em;
+    border: 1px solid var(--grey);
+    border-radius: 20px;
+}
+.base-textarea {
+    width: 20em;
+    margin-top: .5em;
+    padding: .75em 1em;
+    border: 1px solid var(--grey);
+}
+.base-button {
+    padding: .5em 1.5em;
+    background-color: var(--blue);
+    color: var(--text-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.base-button:hover {
+    background-color: var(--dark-blue);
+}
+.base-button-danger {
+    padding: .5em 1.5em;
+    background-color: var(--red);
+    color: var(--text-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.base-button-danger:hover {
+    background-color: var(--dark-red);
+}
+.error {
+    border: 1px solid var(--red);
+}
+.error::placeholder {
+    color: var(--red);
+}
+.alert {
+    opacity: 0;
+    transition: all .25s;
+    padding: 1em 2em;
+    position: absolute;
+    bottom: 3vh;
+    right: 3vw;
+}
+.alert-error {
+    opacity: 1;
+    background-color: var(--red);
+    border: 1px solid var(--dark-red);
+}
+.alert-sucess {
+    opacity: 1;
+    background-color: var(--green);
+    border: 1px solid var(--dark-green);
+}
+.alert-modal {
+    width: 40%;
+    height: 30%;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+.alert-modal-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.alert-modal-content {
+    font-size: 1.25em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.alert-modal-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/* TABLAS ESTANDAR */
+.base-table-container {
+    width: 80%;
+    height: fit-content;
+}
+.modal-table-container {
+    width: 100%;
+    height: fit-content;
+}
+.table-modal {
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+.table-scroll {
+    width: 100%;
+    overflow-x: auto;
+}
+.base-table-components {
+    width: 100%;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.base-table-components input {
+    width: 15em;
+    padding: .5em .75em;
+    border: 1px solid var(--grey);
+}
+.base-table {
+    width: 100%;
+    margin-bottom: 1em;
+    border-spacing:0;
+    border-collapse: collapse;
+}
+.base-table-head th {
+    background-color: var(--blue);
+    color: var(--text-white);
+    font-family: 'Roboto-Bold';
+    font-weight: 700;
+}
+.base-table-body tr:nth-child(even) {
+    background-color: var(--bright-blue);
+}
+.base-table-head th,
+.base-table-body td {
+    border: .5px solid var(--table-border-color);
+    padding: .5em .75em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+
+}
+.base-table-body td:last-child {
+    white-space: nowrap;
+    text-align: center;
+}
+.base-table-delete {
+    padding: .5em;
+    background-color: var(--red);
+    color: var(--text-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.base-table-delete:hover {
+    background-color: var(--dark-red);
+}
+.base-table-edit {
+    padding: .5em;
+    margin-right: .5em;
+    background-color: var(--blue);
+    color: var(--text-white);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.base-table-edit:hover {
+    background-color: var(--dark-blue);
+}
+.base-table-delete svg,
+.base-table-edit svg {
+    width: 20px;
+}
+.base-table-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.base-tnav-indicator {
+    font-size: 16px;
+}
+.base-table-nav {
+    padding: .25em;
+    background-color: var(--blue);
+    color: var(--text-white);
+    margin-left: .75em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.base-table-nav:hover {
+    background-color: var(--dark-blue);
+}
+.base-table-nav svg {
+    width: 16px;
+}
+/* PANEL PRINCIPAL */
+.panel {
+    min-height: 90vh;
+    padding: 0 1em; 
+    background-image: url(../img/logo-ghost.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.card-container {
+    margin-bottom: 2em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+.card {
+    /* height: 10vh; */
+    padding: 2em 1em;
+    border-left: 4px solid var(--blue);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-title {
+    margin-bottom: .5em;
+    font-family: 'Roboto-Light';
+    font-weight: 300;
+    font-size: 12px;
+}
+.card-data {
+    font-family: 'Roboto-bold';
+    font-weight: 700;
+    font-size: 24px;
+}
+.horario-container {
+    width: 100%;
+    padding: 1em 3em;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 820px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 1em;
+    }
+}
+/* REGISTRO AERONAVE */
+.reg-aeronave {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* REGISTRO AEROLINEA */
+.reg-aerolinea {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* REGISTRO INSTITUCION */
+.reg-institucion {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*REGISTRO PERSONAS*/
+.reg-personas {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* REGISTRO USUARIO */
+.reg-usuario {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.usuario input[type="checkbox"] {
+    accent-color: var(--dark-blue);
+}
+.usuario-fields-container {
+    display: flex;
+}
+.usuario-fields-container div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.usuario-fields-container div:nth-child(1) {
+    margin-right: 2em;
+}
+/* REGISTRO TIPO DE VUELO */
+.reg-tipo-vuelo {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* REGISTRO AEROPUERTO */
+.reg-aeropuerto {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* REGISTRO VUELO GENERAL */
+.reg-vuelo-general form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} 
+.field-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: 2em;
+}
+.field-container div:nth-child(1) {
+    grid-column: 1/ 2;
+    grid-row: 1 / 3;
+}
+.field-container div:nth-child(2) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}
+.field-container div:nth-child(3) {
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+}
+.field-container div:nth-child(3) input {
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+.field-container div:nth-child(3) input,
+.field-container div:nth-child(3) textarea {
+    width: 100%;
+}
+.field-container > .base-label textarea {
+    width: 100%;
+}
+.form-buttons-container {
+    width: calc((533.32px) + 2em);
+    margin-bottom: 4em;
+}
+.form-title-conainer {
+    width: calc((533.32px) + 2em);
+}
+/* Logo ruta */
+.input-action-container {
+    position: relative;
+    margin-bottom: 1em;
+}
+.input-action-container input {
+    margin: 0 !important;
+}
+.papelera {
+    width: 24px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 50%;
+    transform: translateY(50%);
+    right: 0.5em;
+}
+.papelera:hover {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+/* REGISTRO VUELO COMERCIAL */
+.reg-vuelo-comercial form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* PROGRAMAR VUELOS */
+.prog-vuelo {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.prog-vuelo-container {
+    display: flex;
+}
+.prog-vuelo-container div {
+    display: flex;
+    flex-direction: column;
+}
+.prog-vuelo-container div:nth-child(1) {
+    margin-right: 2em;
+}
+.prog-vuelo-button {
+    display: block;
+    margin-bottom: 1.5em;
+}
+/* VUELOS PROGRAMADOS */
+.vuelos-programados {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+/* USUARIOS */
+.usuarios {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+/* PENDIENTE */
+.usuarios-card {
+    min-width: 40%;
+}
+.usuarios-card .card-container {
+    display: flex;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+.usuarios-card .card-container .card:hover{
+    opacity: 0.9;
+    background-color: var(--bright-blue);
+    border-right:  4px solid var(--blue);
+}
+.table-heading {
+    background-color: var(--white) !important;
+}
+.table-heading img {
+    height: 6em;
+}
+/* INSTITUCIONES */
+.instituciones {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+/* AERONAEVES */
+.aeronaves {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+/* AEROLINEAS */
+.aerolineas {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+/* TIPOS DE VUELO */
+.tipos-vuelo {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+/* AEROPUERTO */
+.aeropuerto {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+/* BITACORA */
+.bitacora {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+.bitacora-table-components {
+    width: 100%;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.bitacora-table-components input {
+    width: 15em;
+    padding: .5em .75em;
+    border: 1px solid var(--grey);
+}
+/* VUELOS GENERALES */
+.vuelos-generales {
+    height: 90vh;
+    padding: 3em 3em 1.5em 2em;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+/* VUELOS COMERCIALES */
+.vuelos-comerciales {
+    height: 90vh;
+    padding: 3em 0 1.5em 0;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+/* ESTADISTICAS */
+.estadisticas {
+    padding: 3em 0 1.5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.chart-controls {
+    width: 80%;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: space-evenly;
+}
+.chart-controls select {
+    padding: .5em;
+    border: 1px solid var(--grey);
+}
+.chart-container {
+    display: flex;
+    width: 80%;
+}
+.chart-container > div {
+    width: 50%;
+}
